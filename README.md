@@ -25,3 +25,4 @@
 - [ ] Salvar o status no localStorage para se a aba for encerrado
 - [ ] Extensão do navegador
 - [ ] Alterar o tema
+- [ ] Função esconder o time
