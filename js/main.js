@@ -10,7 +10,6 @@ disparador.addEventListener('click', () => {
         alert("O seu tempo de produção do pomodoro acabou, vá descansar!");
         
         clearInterval(contador)
-
     }, segundosPomodoro)
     
     let contador = setInterval('contadorDeSegundos()', 1000);
