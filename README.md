@@ -8,12 +8,13 @@
 - [X] Disparar um aviso no fim do cronometro
 - [X] Criar a lógica de contador de segundos
 - [X] Calcular o tempo restante no cronometro
-- [ ] Criar o componente do cronometro na tela
-- [ ] Exibir visualmente o tempo restante
+- [X] Criar o componente do cronometro na tela
+- [X] Exibir visualmente o tempo restante do componente cronometro
 - [ ] Ter uma outra avitação do cronometro, com 5min, para o intervalo
 - [ ] Exibir uma contagem de comodoros
 - [ ] Depois de 4 pomodoros ativar um intervalo  longo de 15min
 - [ ] Botão para pausar e retornar ao contador
+- [ ] Ter uma apresentação visual melhor para aviso de inicio e fim
 - [ ] Avisos sonoros para cada inicio e fim
 - [ ] Ativar função de ir no automático para a próxima etapa do pomodoro
 
