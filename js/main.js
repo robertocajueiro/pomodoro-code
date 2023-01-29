@@ -1,8 +1,10 @@
 const milissegundosPomodoro = 4000// Estamos usando 4 segundos para testes. O tempo oficial é 25*60*1000
-const milissegundosIntervalo = 40000 // Intervalo de 5 minutos é igual 300000
+const milissegundosIntervaloCurto = 4000 // Intervalo de 5 minutos é igual 300000
+const milissegundosIntervaloLongo = 900000 // Intervalo de 5 minutos é igual 300000
 const disparador = document.querySelector('#disparador')
 const cronometro = document.querySelector('#cronometro')
 const historico = document.querySelector('#historico')
+const tamanhoDoCiclo = 4
 let milissegundosRestantes = 0
 let contador
 let modo = ''
@@ -21,7 +23,12 @@ disparador.addEventListener('click', () => {
     
         } else if (disparador.textContent=="Intervalo") {
             modo = "intervalo"
-            milissegundosRestantes = milissegundosPomodoro - 1000
+            if(historico.textContent % tamanhoDoCiclo == 0) {
+                milissegundosRestantes = milissegundosIntervaloLongo
+            } else {
+                milissegundosRestantes = milissegundosIntervaloCurto
+            }
+            milissegundosRestantes -= 1000
         }
 
         disparador.textContent="Pausar"
@@ -37,14 +44,20 @@ function contadorDeSegundos() {
        
        if(modo=="pomodoro") {
             disparador.textContent="Intervalo"
-            document.querySelector('body').style.background = "#287b7c"
-            disparador.style.color = "#287b7c"
+            if(historico.textContent % tamanhoDoCiclo == 0) {
+                document.querySelector('body').style.background = "#29678a"
+                disparador.style.color = "#29678a"
+
+            } else {
+                document.querySelector('body').style.background = "#287b7c"
+                disparador.style.color = "#287b7c"
+            }
+
        } else if(modo=="intervalo"){
             disparador.textContent="Começar"
             document.querySelector('body').style.background = "#C84949"
             disparador.style.color = "#C84949"
-
-       }
+       } 
         
         clearInterval(contador)
     } else {
